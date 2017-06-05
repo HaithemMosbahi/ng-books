@@ -12,6 +12,8 @@ import { SharedModule } from "./shared/shared.module";
 import { HomeModule } from "./home/home.module";
 import { LoginModule } from "./login/login.module";
 
+import { MaterialModule } from "@angular/material";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -24,6 +26,7 @@ import { LoginModule } from "./login/login.module";
     HomeModule,
     LoginModule,
     AppRoutingModule,
+    MaterialModule
 
   ],
   providers: [{

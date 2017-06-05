@@ -20,10 +20,11 @@ import { LoginModule } from "./login/login.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
     SharedModule,
     HomeModule,
-    LoginModule
+    LoginModule,
+    AppRoutingModule,
+
   ],
   providers: [{
     provide: APP_BASE_HREF,

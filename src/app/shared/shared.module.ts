@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { PageNotFoundComponent } from "./pageNotFound/page-not-found.component";
+import { NavBarComponent } from "./navbar/navbar.component";
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { PageNotFoundComponent } from "./pageNotFound/page-not-found.component";
     RouterModule,
     FormsModule
   ],
-  declarations: [PageNotFoundComponent],
-  exports:[CommonModule,RouterModule,FormsModule,PageNotFoundComponent]
+  declarations: [PageNotFoundComponent,NavBarComponent],
+  exports:[CommonModule,RouterModule,FormsModule,PageNotFoundComponent,NavBarComponent]
 })
 export class SharedModule { }

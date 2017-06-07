@@ -4,10 +4,12 @@ import { BookComponent } from './book.component';
 import { BookDetailComponent } from "./book-detail.component";
 import { BookService } from "./book.service";
 import { BooksRoutingModule } from "./book-routing.module";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     BooksRoutingModule
   ],
   declarations: [BookComponent,BookDetailComponent],

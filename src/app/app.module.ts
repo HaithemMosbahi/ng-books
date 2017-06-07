@@ -13,6 +13,9 @@ import { HomeModule } from "./home/home.module";
 import { LoginModule } from "./login/login.module";
 import { BooksModule } from "./books/book.module";
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { BooksModule } from "./books/book.module";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     SharedModule,

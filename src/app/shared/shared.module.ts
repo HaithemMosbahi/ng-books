@@ -7,11 +7,15 @@ import { RouterModule } from "@angular/router";
 import { PageNotFoundComponent } from "./pageNotFound/page-not-found.component";
 import { NavBarComponent } from "./navbar/navbar.component";
 
+import { MaterialModule } from "@angular/material";
+
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   declarations: [PageNotFoundComponent,NavBarComponent],
   exports:[CommonModule,RouterModule,FormsModule,PageNotFoundComponent,NavBarComponent]

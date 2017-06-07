@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from "./book.service";
+import { ActivatedRoute } from '@angular/router';
 
+/**
+ * Represents the Book Detail component
+ * 
+ * @export
+ * @class BookDetailComponent
+ * @implements {OnInit}
+ */
 @Component({
     moduleId: module.id,
     selector: 'app-book-detail',
@@ -7,7 +16,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BookDetailComponent implements OnInit {
-    constructor() { }
+    // The current book instance
+    book:any;
 
-    ngOnInit() { }
+    constructor(public bookService:BookService,
+               public route:ActivatedRoute) { 
+    }
+
+    ngOnInit() {
+        this.route.params.subscribe(params => {
+            this.book = this.bookService.getBook(params['id']);
+
+        });
+     }
 }

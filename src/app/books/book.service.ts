@@ -15,11 +15,35 @@ import { Book } from "./book.model";
 export class BookService {
 
     constructor(private http: Http) { }
-
-    fetch(query: string): Observable<Book[]> {
+    
+    /**
+     * Fetch Books
+     * 
+     * @param {string} query 
+     * @returns {Observable<Book[]>} 
+     * 
+     * @memberOf BookService
+     */
+    getBooks(query: string): Observable<Book[]> {
         const resourceUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
         return this.http.get(resourceUrl).map(response => response.json().items as Book[]);
 
     }
+
+    /**
+     * Fetch Book's detail
+     * 
+     * @param {string} id 
+     * @returns 
+     * 
+     * @memberOf BookService
+     */
+    getBook(id:string){
+        const resourceUrl = ` https://www.googleapis.com/books/v1/volumes/${id}`;
+        return this.http.get(resourceUrl).map(response => response.json() as Book);
+       
+    }
+
+
 
 }

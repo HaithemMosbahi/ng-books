@@ -9,11 +9,13 @@ import { BookService } from "./book.service";
 export class BookComponent implements OnInit {
 
   books:any;
+  query:string;
 
   constructor(public bookService: BookService) { }
 
   ngOnInit() {
-    this.books = this.bookService.fetch("Think");
+    this.query = "Think";
+    this.books = this.bookService.getBooks(this.query);
   }
 
 }

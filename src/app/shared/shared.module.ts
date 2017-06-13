@@ -18,6 +18,6 @@ import { MaterialModule } from "@angular/material";
     MaterialModule
   ],
   declarations: [PageNotFoundComponent,NavBarComponent],
-  exports:[CommonModule,RouterModule,FormsModule,PageNotFoundComponent,NavBarComponent]
+  exports:[CommonModule,RouterModule,FormsModule,PageNotFoundComponent,NavBarComponent,MaterialModule]
 })
 export class SharedModule { }

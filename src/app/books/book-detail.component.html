@@ -1,2 +1,18 @@
-<p>Detail component<p> 
-<p> {{(book | async)}} </p>
+<md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>{{(book | async)?.volumeInfo.title}}</md-card-title>
+    <md-card-subtitle>Dog Breed</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image width="300" height="300" [src]="(book | async)?.volumeInfo.imageLinks.thumbnail">
+  <md-card-content>
+    <p>
+      {{(book | async)?.volumeInfo.description}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>Favorite</button>
+    <button md-button>Like</button>
+  </md-card-actions>
+</md-card>
+

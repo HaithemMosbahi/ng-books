@@ -1,6 +1,17 @@
 <md-grid-list cols="2" rowHeight="2:1">
   <md-grid-tile *ngFor="let book of books | async">
-    {{book.id}}
-      <a [routerLink]="['/book',book.id]"> Details </a>
+    <md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>{{book.volumeInfo.title}}</md-card-title>
+    <md-card-subtitle>Dog Breed</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image width="300" height="300" [src]="book.volumeInfo.imageLinks.thumbnail">
+ 
+  <md-card-actions>
+    <button [routerLink]="['/book',book.id]" md-button>Details</button>
+  </md-card-actions>
+</md-card>
+  
   </md-grid-tile>
 </md-grid-list>

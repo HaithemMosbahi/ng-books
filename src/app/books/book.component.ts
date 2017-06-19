@@ -16,6 +16,7 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     this.query = "Think";
     this.books = this.bookService.getBooks(this.query);
+    //this.bookService.getServerBooks();
   }
 
 }

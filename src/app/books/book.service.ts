@@ -14,6 +14,8 @@ import { Book } from "./book.model";
 @Injectable()
 export class BookService {
 
+    private resourceUrl = "http://localhost:8080/books";
+
     constructor(private http: Http) { }
     
     /**
@@ -28,6 +30,14 @@ export class BookService {
         const resourceUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
         return this.http.get(resourceUrl).map(response => response.json().items as Book[]);
 
+    }
+
+    getServerBooks(){
+        this.http.get(this.resourceUrl).
+           map(response => response.json())
+           .subscribe(data => {
+               console.log("books data "+JSON.stringify(data));
+        });
     }
 
     /**
